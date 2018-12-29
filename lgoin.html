@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/lgoin/lgoin.css">
+    <link rel="stylesheet" href="dist/css/swiper.min.css">
+	<title>登录</title>
+	<script>
+        var pixelRatio = 1 / window.devicePixelRatio;
+        document.write('<meta name="viewport" content="width=device-width,initial-scale=' + pixelRatio + ',minimum-scale=' + pixelRatio + ',maximum-scale=' + pixelRatio + '" />');
+        var html = document.getElementsByTagName('html')[0];
+        var pageWidth = html.getBoundingClientRect().width;
+        html.style.fontSize = pageWidth / 10 + "px";
+    </script>
+</head>
+<body>
+    <div class="top">
+        <div class="top-1">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div>9:30 AM</div>
+        <div class="top-2">100%&nbsp<span></span></div>
+    </div> 
+    <div class="title">
+        <div id="title-2"></div>
+        <a href=""><img src="img/logo.png" alt=""></a>
+    </div>
+    <div class="DIS">
+    	<div class="list">
+    		<ul class="list-ul">
+                <li>
+                    <a href="student.html"><img src="img/h1.png" alt=""></a>
+                    <p>首页</p>
+                </li>
+                <li>
+                    <a href="classify.html"><img src="img/h2.png" alt=""></a>
+                    <p>课程</p>
+                </li>
+                <li>
+                    <a href="teacher.html"><img src="img/h4.png" alt=""></a>
+                    <p>导师</p>
+                </li>
+                <li>
+                    <a href="index.html"><img src="img/h5.png" alt=""></a>
+                    <p>学员</p>
+                </li>
+                <li>
+                    <a href="notice.html"><img src="img/h3.png" alt=""></a>
+                    <p>须知</p>
+                </li>
+                <li>
+                    <a href="lgoin.html"><img src="img/h1.png" alt=""></a>
+                    <p>登录</p>
+                </li>
+            </ul>
+    	</div>
+    	<div class="EWM">
+    		<div class="EWM-1">
+    			<img src="img/qr.jpg" alt="">
+    			<p>长按识别二维码,</p>
+    			<span>关注公众号</span>
+    		</div>
+    	</div>
+    </div>
+    <form action="student.html">
+        <input type="text" placeholder="用户名" id="username">
+        <input type="text" placeholder="密码" id="password">
+        <input type="submit" onclick="check()" id="login-btn">
+    </form>
+    <script>
+        var oTit = document.getElementById('title-2');
+        var oDIS = document.getElementsByClassName('DIS')[0];
+        var key = true;
+        var oForm = document.getElementsByTagName('form')[0];
+
+            function fun1(){
+                oDIS.style.left='0'
+                oTit.style.background="url(img/close.png) no-repeat"
+            }
+            function fun2(){
+                oDIS.style.left=-750+'px'
+                oTit.style.background="url(img/menu.png) no-repeat"
+            }
+            oTit.onclick=function(){
+                if(key){
+                    fun1();
+                    key=false;
+                    return key;
+                }else{
+                    fun2();
+                    key=true;
+                    return key;
+                }
+            }
+
+             function check() {
+            if(document.getElementById("username").value=="") {
+                alert("没有输入用户名！");
+                oForm.style.action="";
+                 return false;
+              } else if(document.getElementById("password").value=="") {
+                alert("没有输入密码！");
+                oForm.style.action="";
+                return false;
+              } else {
+                alert("提交成功！")
+                return true;
+               }
+            } 
+    </script>
+    
+</body>
+</html>
